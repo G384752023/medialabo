@@ -1,0 +1,16 @@
+boby{
+    background:linear-gradient(#3f3faf, #fdfdfdfd) ;
+}
+table{
+    color: red;
+}
+th scope , td{
+    border: solid 1px beige;
+    padding: 15px 15px 15px;
+}
+
+td {
+    font-size: 1.1em;
+    text-shadow: 2px 2px 2px blue;
+
+}
