@@ -1,8 +1,18 @@
+boby{
+    background-color: brown;
+}
+h1{
+    color:aqua;
+    text-shadow: rab(82, 178, 226) 1px 0 10px;
+}
 h2 {
     color:aqua;
 }
 h3{
     color:blueviolet;
+}
+p{
+    color: azure;
 }
 
 
