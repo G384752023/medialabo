@@ -22,7 +22,8 @@ p.style.textEmphasis='sesame green';
 
 // 練習4-3 写真表作成プログラム
 let photo = document.querySelector('phototable');
-
+let im = document.createElement('img');
+im.setAttribute('src','taro.png');
 
 // 練習4-4 箇条書き削除プログラム
 
