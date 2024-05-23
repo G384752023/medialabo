@@ -28,6 +28,11 @@ im.setAttribute('src','taro.png');
 let pp = document.createElement('p');
 pp.insertAdjacentElement('beforeend',im);
 photo.insertAdjacentElement('beforeend', pp);
+let i = document.createElement('img');
+i.setAttribute('src','jiro.png');
+let p2 =  document.createElement('p');
+p2.insertAdjacentElement('beforeend',i);
+photo.insertAdjacentElement('beforeend', p2);
 
 // 練習4-4 箇条書き削除プログラム
 
