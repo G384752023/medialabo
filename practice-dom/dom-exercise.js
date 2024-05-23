@@ -24,7 +24,7 @@ p.style.textEmphasis='sesame green';
 // 練習4-3 写真表作成プログラム
 let photo = document.querySelector('div#phototable');
 let im = document.createElement('img');
-im.setAttribute('href','taro.png');
+im.setAttribute('src','taro.png');
 let pp = document.createElement('p');
 pp.insertAdjacentElement('beforeend',im);
 photo.insertAdjacentElement('beforeend', pp);
