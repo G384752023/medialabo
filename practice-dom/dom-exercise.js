@@ -33,6 +33,11 @@ i.setAttribute('src','jiro.png');
 let p2 =  document.createElement('p');
 p2.insertAdjacentElement('beforeend',i);
 photo.insertAdjacentElement('beforeend', p2);
+let i2 = document.createElement('img');
+i.setAttribute('src','hanako.png');
+let p3 =  document.createElement('p');
+p3.insertAdjacentElement('beforeend',i2);
+photo.insertAdjacentElement('beforeend', p3);
 
 // 練習4-4 箇条書き削除プログラム
 
