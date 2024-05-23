@@ -26,7 +26,7 @@ let photo = document.querySelector('div#phototable');
 let im = document.createElement('img');
 im.setAttribute('src','taro.png');
 let pp = document.createElement('p');
-pp.insertAdjacentElement('beforeend', photo);
+photo.insertAdjacentElement('beforeend', pp);
 
 // 練習4-4 箇条書き削除プログラム
 
