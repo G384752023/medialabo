@@ -21,6 +21,7 @@ h2.insertAdjacentElement('afterend', p);
 p.style.textEmphasis='sesame green'; 
 
 // 練習4-3 写真表作成プログラム
+let photo = document.querySelector('phototable');
 
 
 // 練習4-4 箇条書き削除プログラム
