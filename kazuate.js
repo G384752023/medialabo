@@ -20,7 +20,7 @@ function hantei() {
   kaisu = kaisu + 1;
   console.log(kaisu +'回目の予想'+ yoso);
 if(kaisu > 3){
-    console.log('答えは、'+ kotae +'でした。　すでにゲームは終わっています。');
+    console.log('答えは'+ kotae +'でした。すでにゲームは終わっています。');
 }else if(kaisu === 3){
     console.log('まちがい。残念でした答えは'+ kotae +'です。');
 }
