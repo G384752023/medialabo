@@ -200,4 +200,16 @@ let data = {
 };
 
 /////////// 課題3-2 ここからプログラムを書こう
+console.log(date);
+date.results.shop.forEach(function(shop){
+  console.log('アクセス：',shop.access);
+  console.log('住所：', shop.address);
+  console.log('予算：',shop.budget.name);
+  console.log('キャッチ：',shop.catch);
+  console.log('ジャンル：',shop.genre.name);
+  console.log('名前：',shop.name);
+  console.log('営業日時：',shop.open);
+  console.log('最寄駅',shop.station_name);
+  console.log('サブジャンルの名前：',shop.sub_genre.name);
+});
 
