@@ -23,6 +23,8 @@ if(kaisu > 3){
     console.log('答えは、'+ kotae +'でした。　すでにゲームは終わっています。');
 }else if(kaisu === 3){
     console.log('まちがい。残念でした答えは'+ kotae +'です。');
+}
+    else{
     if(kaisu <= 2 && yoso > kotae){
         console.log('まちがい。答えはもっと小さいですよ。');
     }else{
