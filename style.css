@@ -3,16 +3,33 @@ boby{
 }
 h1{
     color:black;
-    text-shadow: rab(82, 178, 226) 1px 0 10px;
+    text-shadow: rgb(82, 178, 226) 1px 0 10px;
 }
 h2 {
     color:black;
+    text-shadow: rgb(226, 82, 200);
 }
 h3{
-    color:blueviolet;
+    color:black;
+    text-shadow: rgb(15, 172, 94);
 }
 p{
-    color: azure;
+    color: rgb(1, 15, 12);
+}
+div.zentai {
+    display: grid;                      
+    grid-template-columns:  2fr ; 
+    grid-auto-rows: 180px;        
+    grid-gap: 50px;                     
+    padding: 10px ;
+    width: 1024px;
 }
 
+div.box {
+    background: whitesmoke;
+}
+a :link , a:visited {
+     color:yellowgreen;
+     text-decoration: underline;
+}
 
