@@ -16,18 +16,8 @@ h3{
 p{
     color: rgb(1, 15, 12);
 }
-div.zentai {
-    display: grid;                      
-    grid-template-columns:  2fr ; 
-    grid-auto-rows: 180px;        
-    grid-gap: 50px;                     
-    padding: 10px ;
-    width: 1024px;
-}
 
-div.box {
-    background: whitesmoke;
-}
+
 a :link , a:visited {
      color:yellowgreen;
      text-decoration: underline;
