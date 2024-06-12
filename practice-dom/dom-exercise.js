@@ -40,7 +40,15 @@ p3.insertAdjacentElement('beforeend',i2);
 photo.insertAdjacentElement('beforeend', p3);
 
 // 練習4-4 箇条書き削除プログラム
-
+let a =document.querySelector('ul#location > li');
+for (i of a){
+	i.remove();
+}
 
 // 練習4-5 箇条書き追加プログラム
-
+for(let x of date){
+	let xau=document.querySelector('ul#location');
+	let li = document.createElement('li');
+	li.textContent=(x.name+'...緯度：'+x.lat+',経度'+x.lng);
+	xau.insertAdjacentElement('beforeend',li);
+}
