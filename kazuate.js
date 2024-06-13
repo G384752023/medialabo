@@ -18,13 +18,13 @@ function hantei() {
  let b = document.querySelector('input[name=kazuate]');
  let yoso = i.value; 
  let c =document.querySelector('span#kaisu');
- let d = document.createElement('b');
+ let d = document.createElement('p');
  b.textContent = kaisu;
  let e = document.querySelector('span#answer');
- let f = document.createElement('b');
+ let f = document.createElement('p');
 e.textContent = yoso;
 let g =document.querySelector('b#result');
-let h = document.createElement('g');
+let h = document.createElement('p');
 if(kaisu < 4){
     console.log(kaisu+'回目の予想：'+yoso);
 if(kaisu === 3 && (yoso < kotae || yoso > kotae)){
