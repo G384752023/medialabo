@@ -24,7 +24,7 @@ function hantei() {
  let f = document.createElement('b');
 e.textContent = yoso;
 let g =document.querySelector('b#result');
-let h = document.createElement('b');
+let h = document.createElement('g');
 if(kaisu < 4){
     console.log(kaisu+'回目の予想：'+yoso);
 if(kaisu === 3 && (yoso < kotae || yoso > kotae)){
