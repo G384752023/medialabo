@@ -27,7 +27,7 @@ let g =document.querySelector('b#result');
 let h = document.createElement('p');
 if(kaisu < 4){
     console.log(kaisu+'回目の予想：'+yoso);
-    if(yoso === kotae){
+    if(yoso == kotae){
         if(kaisu < 4){
         console.log('正解です。おめでとう。');
         g.textContent='正解です。おめでとう。';
