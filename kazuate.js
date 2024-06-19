@@ -30,26 +30,26 @@ if(kaisu < 4){
     if(yoso == kotae){
         if(kaisu < 4){
         console.log('正解です。おめでとう。');
-        g.textContent='正解です。おめでとう。';
+       
     }else{
         console.log('答えは'+kotae+"でした、すでにゲームは終わっています");
-        p.textContent='答えは'+kotae+"でした、すでにゲームは終わっています";
+        
     }
 }
     else{
     if(kotae < yoso){
         console.log('まちがい。答えはもっと小さいですよ。');
-        p.textContent='まちがい。答えはもっと小さいですよ';
+       
     }else{
         console.log('まちがい。答えはもっと大きいですよ。');
-        p.textContent='まちがい。答えはもっと大きいですよ。';
+        
     }
 }
    
     }else{
         console.log(kaisu+"回目の予想："+yoso);
         console.log('答えは'+kotae+'でした、すでにゲームは終わっています');
-        p.textContent='答えは'+kotae+'でした、すでにゲームは終わっています';
+        
     }
 }
 
