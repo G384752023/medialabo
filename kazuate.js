@@ -16,7 +16,7 @@ function hantei() {
   // 将来ここでは 4 ではなくテキストボックスに指定された数値を yoso に代入する
   kaisu = kaisu + 1;
  let b = document.querySelector('input[name=kazuate]');
- let yoso = i.value; 
+ let yoso = b.value; 
  let c =document.querySelector('span#kaisu');
  let d = document.createElement('p');
  b.textContent = kaisu;
@@ -27,21 +27,28 @@ let g =document.querySelector('b#result');
 let h = document.createElement('p');
 if(kaisu < 4){
     console.log(kaisu+'回目の予想：'+yoso);
-if(kaisu === 3 && (yoso < kotae || yoso > kotae)){
-    console.log('まちがい。残念でした答えは'+ kotae +'です。');
     if(yoso === kotae){
         console.log('正解です。おめでとう。');
-    }
-    else{
+        g.textContent='正解です。おめでとう。';
+    }else{
     if(kaisu <= 2 && yoso > kotae){
         console.log('まちがい。答えはもっと小さいですよ。');
+        g.textContent='まちがい。答えはもっと小さいですよ';
     }else{
         console.log('まちがい。答えはもっと大きいですよ。');
+        g.textContent='まちがい。答えはもっと大きいですよ。';
     }
 }
+    if(kaisu === 3 && (yoso < kotae || yoso > kotae)){
+        console.log('まちがい。残念でした答えは'+ kotae +'です。');
+        g.textContent='まちがい。残念でした答えは'+ kotae +'です';
+}
+    }if(kaisu > 3){
+        console.log('答えは'+kotae+'でした、すでにゲームは終わっています');
+        g.textContent='答えは'+kotae+'でした、すでにゲームは終わっています';
     }
 }
-}
+
   
   // 課題3-1: 正解判定する
   // kotae と yoso が一致するかどうか調べて結果を出力
