@@ -212,4 +212,50 @@ date.results.shop.forEach(function(shop){
   console.log('最寄駅',shop.station_name);
   console.log('サブジャンルの名前：',shop.sub_genre.name);
 });
+function showResult(resp){
+  let shops_length = resp.data.results.shop.length;
+  if(shops_length > 0){
+    console.log('八王子駅周辺で'+shops_length+'件ヒットしました');
+    document.querySelector('#length').textContent ='八王子駅周辺で'+shops_length+'件ヒットしました';
+    let tableBoby = document.querySelector('#tableBoby');
+    if(!tableBoby){
+      console.error('tableBoby is null');
+      return;
+    }
+    tableBoby.innerHTML = '';
+    let shops = resp.data.results.shop;
+    for(let j = 0; j < shops.length; j++){
+      let name_data = shops[j].name;
+      let acsess_data = shops[j].acsess;
+      let address_data = shops[j].address;
+      let budget_data = shops[j].budget.name;
+      let catch_data = shops[j].catch;
+      let genre_data = shops[j].genre.name;
+      let open_data = shops[j].open;
+      let station_data = shops[j].station_name;
+      let sub_genre_data = shops[j].sub_genre ? shops[j].sub_genre.name : 'データがありません';
+      console.log(name_data);
+      console.log(access_data);
+      console.log(address_data);
+      console.log(budget_data);
+      console.log(catch_data);
+      console.log(genre_data);
+      console.log(open_data);
+      console.log(station_data);
+      console.log(sub_genre_data);
+      let a = tableBoby.insertRow();
+      a.insertCell().textContent = name_data;
+      a.insertCell().textContent = access_data;
+      a.insertCell().textContent = address_data;
+      a.insertCell().textContent = budget_data;
+      a.insertCell().textContent = catch_data;
+      a.insertCell().textContent = genre_data;
+      a.insertCell().textContent = open_data;
+      a.insertCell().textContent = station_data;
+      a.insertCell().textContent = sub_genre_data;
 
+      
+
+    }
+  }
+}
