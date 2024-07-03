@@ -200,8 +200,8 @@ let data = {
 };
 
 /////////// 課題3-2 ここからプログラムを書こう
-console.log(date);
-date.results.shop.forEach(function(shop){
+console.log(data);
+data.results.shop.forEach(function(shop){
   console.log('アクセス：',shop.access);
   console.log('住所：', shop.address);
   console.log('予算：',shop.budget.name);
