@@ -46,10 +46,9 @@ if(kaisu < 4){
     }
 }
    
-    }else{
-        console.log(kaisu+"回目の予想："+yoso);
-        console.log('答えは'+kotae+'でした、すでにゲームは終わっています');
-        
+    }
+    if(kaisu == 3 && yoso != kotae){
+        console.log("残念！　答えは"+kotae+"でした");
     }
 }
 
