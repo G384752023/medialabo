@@ -4,7 +4,7 @@ p {
 
 p.info {
 	font-size: small;
-	background-color: #fdfdfdfd;
+	background-color: #dfdfdfdf;
 }
 
 h1 {
@@ -15,7 +15,7 @@ h1 {
 h2 {
 	font-family: cursive;
 	color:#3f3faf;
-	background: linear-gradient(.25turn, white, 50%, #ffefaf);
+	background: linear-gradient(.25turn, white, 80%, #ffefaf);
 }
 
 div#zentai {
@@ -32,7 +32,7 @@ div#zentai > div {
 
 img.sign {
 	float:right;
-	
+
 	width: 100px;
 	height: 100px;
 	margin: 10px 0 10px 10px;
