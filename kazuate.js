@@ -40,7 +40,7 @@ if(kaisu < 4){
         if(kaisu == 3 && yoso != kotae){
             console.log("残念！　答えは"+kotae+"でした");
         }
-    if(kotae < yoso){
+    if(kotae < yoso && kaisu != 3){
         console.log('まちがい。答えはもっと小さいですよ。');
        
     }
