@@ -43,7 +43,8 @@ if(kaisu < 4){
     if(kotae < yoso){
         console.log('まちがい。答えはもっと小さいですよ。');
        
-    }else{
+    }
+    if(kotae > yoso && kaisu != 3){
         console.log('まちがい。答えはもっと大きいですよ。');
         
     }
