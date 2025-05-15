@@ -16,12 +16,5 @@ document.addEventListener("DOMContentLoaded", function () {
       const answerSpan = document.getElementById("answer");
   
 
-      if (isNaN(leftNumber) || isNaN(rightNumber)) {
-        answerSpan.textContent = "エラー";
-      } else {
-    
-        const result = leftNumber + rightNumber;
-        answerSpan.textContent = result;
-      }
     });
   });
