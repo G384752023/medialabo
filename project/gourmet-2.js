@@ -14,6 +14,42 @@ function print(data) {
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
+  function printDom(data) {
+    
+    const resultDiv = document.createElement("div");
+    resultDiv.id = "result";
+    document.body.appendChild(resultDiv);
+
+   
+    const table = document.createElement("table");
+    table.border = "1";
+
+   
+    const headerRow = document.createElement("tr");
+    for (const key of ["id", "name", "price", "maker"]) {
+        const th = document.createElement("th");
+        th.textContent = key;
+        headerRow.appendChild(th);
+    }
+    table.appendChild(headerRow);
+
+    
+    for (const item of data) {
+        const row = document.createElement("tr");
+
+        for (const key of ["id", "name", "price", "maker"]) {
+            const td = document.createElement("td");
+            td.textContent = item[key];
+            row.appendChild(td);
+        }
+
+        table.appendChild(row);
+    }
+
+    
+    resultDiv.appendChild(table);
+}
+
 
 }
 
@@ -24,6 +60,9 @@ function printDom(data) {
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
+   const genre = document.getElementById("search").value;
+   const url = `https://webapi.sample/hotpepper/gourmet/v1/?key=demo&format=json&genre=${genre}`;
+
 
 }
 

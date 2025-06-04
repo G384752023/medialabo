@@ -1,52 +1,40 @@
+<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <meta charset="utf-8">
     <title>検索結果のデータ項目</title>
     <link rel="stylesheet" href="project.css">
-    <script src="gourmet-2.js"defer></script>
-    </head>
-    <boby>
-                    
-                <h2>グルメ情報</h2>
-                    <label for="search">>検索キー：</label>
-                    <select name="search" id="search">
-                    <option value="G001">居酒屋</option>
-                    <option value="G002">ダイニングバー・バル</option>
-                    <option value="G003">創作料理</option>
-                    <option value="G004">和食</option>
-                    <option value="G005">洋食</option>
-                    <option value="G006">イタリアン・フレンチ</option>
-                    <option value="G007">中華</option>
-                    <option value="G008">焼肉・ホルモン</option>
-                    <option value="G009">アジア・エスニック料理</option>
-                    <option value="G010">各国料理</option>
-                    <option value="G011">カラオケ・パーティー</option>
-                    <option value="G012">バー・カクテル</option>
-                    <option value="G013">ラーメン</option>
-                    <option value="G014">カフェ・スイーツ</option>
-                    <option value="G015">その他グルメ</option>
-                    <option value="G016">お好み焼き・もんじゃ</option>
-                    <option value="G017">韓国料理</option>
-                </select>
-                <button id="print">検索</button>
-                <h2 id="length"></h2>
-                <div id="result">
-                    <table id="shopTable">
-                        <thead>
-                            <tr>
-                                <th>名前</th>
-                                <th>アクセス</th>
-                                <th>住所</th>
-                                <th>予算</th>
-                                <th>キャッチコピー</th>
-                                <th>ジャンル</th>
-                                <th>営業時間</th>
-                                <th>最寄駅</th>
-                                <th>サブジャンル</th>
-                            </tr>
-                        </thead>
-                        <tboby id="tableBoby"></tboby>
-                    </table>
-                </div>
-    </boby>
+    <script src="gourmet-2.js" defer></script>
+</head>
+<body>
+    <h2>グルメ情報</h2>
+    
+    <label for="search">検索キー：</label>
+    <select name="search" id="search">
+        <option value="G001">居酒屋</option>
+        <option value="G002">ダイニングバー・バル</option>
+        <option value="G003">創作料理</option>
+        <option value="G004">和食</option>
+        <option value="G005">洋食</option>
+        <option value="G006">イタリアン・フレンチ</option>
+        <option value="G007">中華</option>
+        <option value="G008">焼肉・ホルモン</option>
+        <option value="G009">アジア・エスニック料理</option>
+        <option value="G010">各国料理</option>
+        <option value="G011">カラオケ・パーティー</option>
+        <option value="G012">バー・カクテル</option>
+        <option value="G013">ラーメン</option>
+        <option value="G014">カフェ・スイーツ</option>
+        <option value="G015">その他グルメ</option>
+        <option value="G016">お好み焼き・もんじゃ</option>
+        <option value="G017">韓国料理</option>
+    </select>
+    
+    <button id="print">検索</button>
+
+    <h2 id="length"></h2>
+
+   
+    <div id="result"></div>
+</body>
 </html>
