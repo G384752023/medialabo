@@ -1,49 +1,67 @@
 
+let b = document.querySelector('#print');
+b.addEventListener('click', print);
+let g = document.querySelector('select#genre');
+let resultDiv = document.querySelector('div#result');
+
 // 課題3-2 のプログラムはこの関数の中に記述すること
-function printDom(data) {
-    // 既存の結果を削除
-    const oldResult = document.getElementById("result");
-    oldResult.innerHTML = "";
+function print(data) {
+  let resultDiv = document.querySelector('div#result');
+  resultDiv.innerHTML = '';
 
-    // 結果を格納するテーブル作成
-    const table = document.createElement("table");
-    table.border = "1";
+  let g = document.querySelector('select#genre');
+  let idx = g.selectedIndex;
+  let os = g.querySelectorAll('option');
+  let o = os.item(idx);
 
-    // 表のヘッダ行を作成
-    const headerRow = document.createElement("tr");
-    const headers = ["店名", "住所", "アクセス"];
-    for (const headText of headers) {
-        const th = document.createElement("th");
-        th.textContent = headText;
-        headerRow.appendChild(th);
-    }
-    table.appendChild(headerRow);
+  console.log('検索キー: ' + o.textContent);
+  let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + o.getAttribute('value') + '.json';
 
-    // 各店舗の行を追加
-    for (const shop of data) {
-        const row = document.createElement("tr");
-
-        const nameCell = document.createElement("td");
-        nameCell.textContent = shop.name;
-        row.appendChild(nameCell);
-
-        const addressCell = document.createElement("td");
-        addressCell.textContent = shop.address;
-        row.appendChild(addressCell);
-
-        const accessCell = document.createElement("td");
-        accessCell.textContent = shop.access;
-        row.appendChild(accessCell);
-
-        table.appendChild(row);
-    }
-
-    // テーブルを result に追加
-    oldResult.appendChild(table);
-
-    // 件数を表示
-    document.getElementById("length").textContent = `検索結果：${data.length}件`;
+  axios.get(url)
+  .then(response => {
+    const data = response.data;
+    console.log(data);
+  })
+  .catch(error => {
+    console.error("データ取得エラー:", error);
+  });
 }
+function printDom(data) {
+  const old = document.getElementById("result");
+  if (old) {
+    old.remove();
+  }
+
+  const resultDiv = document.createElement("div");
+  resultDiv.id = "result";
+  document.body.appendChild(resultDiv);
+
+  for (const shop of data.results.shop) {
+    const shopDiv = document.createElement("div");
+
+    const name = document.createElement("h2");
+    name.textContent = shop.name;
+
+    const address = document.createElement("p");
+    address.textContent = "住所: " + shop.address;
+
+    const genre = document.createElement("p");
+    genre.textContent = "ジャンル: " + shop.genre.name;
+
+    const open = document.createElement("p");
+    open.textContent = "営業時間: " + shop.open;
+
+    shopDiv.appendChild(name);
+    shopDiv.appendChild(address);
+    shopDiv.appendChild(genre);
+    shopDiv.appendChild(open);
+    shopDiv.appendChild(document.createElement("hr"));
+
+    resultDiv.appendChild(shopDiv);
+  }
+}
+// 課題3-2 のプログラムはこの関数の中に記述すること
+
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
 
