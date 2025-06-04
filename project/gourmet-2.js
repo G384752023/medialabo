@@ -61,7 +61,7 @@ function printDom(data) {
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
    const genre = document.getElementById("search").value;
-   const url = `https://webapi.sample/hotpepper/gourmet/v1/?key=demo&format=json&genre=${genre}`;
+   const url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/{genre}.json';
   then(response => {
             if (!response.ok) {
                 throw new Error("通信に失敗しました");
