@@ -1,16 +1,57 @@
-boby{
-    background:linear-gradient(#3f3faf, #fdfdfdfd) ;
-}
-table{
-    color: aqua;
-}
-th scope , td{
-    border: solid 1px beige;
-    padding: 15px 15px 15px;
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    margin: 2em;
+    line-height: 1.6;
 }
 
-td {
-    font-size: 1.1em;
-    text-shadow: 2px 2px 2px blue;
+h2 {
+    color: #333;
+    margin-top: 1.5em;
+}
 
+label, select, button {
+    font-size: 1em;
+    margin-right: 0.5em;
+}
+
+#genre {
+    padding: 0.3em;
+}
+
+#print {
+    padding: 0.4em 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#print:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 2em;
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#result h2 {
+    color: #007BFF;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
+
+#result p {
+    margin: 0.2em 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
 }
