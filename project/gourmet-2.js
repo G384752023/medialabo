@@ -1,10 +1,10 @@
 
-// ボタンクリックで print 関数を呼ぶ
+
 document.querySelector('#print').addEventListener('click', print);
 
 function print() {
     const resultDiv = document.querySelector('div#result');
-    resultDiv.innerHTML = ''; // 前回の検索結果を消す
+    resultDiv.innerHTML = '';
 
     const genreSelect = document.querySelector('select#genre');
     const selectedOption = genreSelect.options[genreSelect.selectedIndex];
@@ -12,24 +12,24 @@ function print() {
 
     console.log('検索キー: ' + selectedOption.textContent);
 
-    // URLの生成（value は G001 の形式なのでそのまま使う）
+    
     const url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + genreValue + '.json';
 
     axios.get(url)
         .then(response => {
             const data = response.data;
-            console.log(data);  // コンソールに確認用出力
-            printDom(data);     // ページに表示
+            console.log(data); 
+            printDom(data);     
         })
         .catch(error => {
             console.error("データ取得エラー:", error);
         });
 }
 
-// データをHTMLに表示する関数
+
 function printDom(data) {
     const resultDiv = document.querySelector('div#result');
-    resultDiv.innerHTML = '';  // 古い内容削除
+    resultDiv.innerHTML = '';  
 
     for (const shop of data.results.shop) {
         const shopDiv = document.createElement("div");
@@ -55,21 +55,15 @@ function printDom(data) {
         resultDiv.appendChild(shopDiv);
     }
 }
+function showResult(resp) {
+  const data = resp.results.shop;
+    printDom(data);
 
-// 課題3-2 のプログラムはこの関数の中に記述すること
+}
+function showError(err) {
+    console.log(err);
+}
+function finish() {
+    console.log('Ajax 通信が終わりました');
+}
 
-// 課題6-1 のイベントハンドラ登録処理は以下に記述
-
-
-
-
-// 課題6-1 のイベントハンドラ sendRequest() の定義
-// 課題6-1: 通信が成功した時の処理は以下に記述
-// 課題3-2 のプログラムはこの関数の中に記述すること
-// 課題5-1 の関数 printDom() はここに記述すること
-// 課題6-1: 通信が成功した時の処理は以下に記述
-// 課題6-1: 通信エラーが発生した時の処理
-// 課題6-1: 通信の最後にいつも実行する処理
-////////////////////////////////////////
-// 以下はグルメのデータサンプル
-// 注意: 第5回までは以下を変更しないこと！
