@@ -1,65 +1,61 @@
 
-let b = document.querySelector('#print');
-b.addEventListener('click', print);
-let g = document.querySelector('select#genre');
-let resultDiv = document.querySelector('div#result');
+// ボタンクリックで print 関数を呼ぶ
+document.querySelector('#print').addEventListener('click', print);
 
-// 課題3-2 のプログラムはこの関数の中に記述すること
-function print(data) {
-  let resultDiv = document.querySelector('div#result');
-  resultDiv.innerHTML = '';
+function print() {
+    const resultDiv = document.querySelector('div#result');
+    resultDiv.innerHTML = ''; // 前回の検索結果を消す
 
-  let g = document.querySelector('select#genre');
-  let idx = g.selectedIndex;
-  let os = g.querySelectorAll('option');
-  let o = os.item(idx);
+    const genreSelect = document.querySelector('select#genre');
+    const selectedOption = genreSelect.options[genreSelect.selectedIndex];
+    const genreValue = selectedOption.value;
 
-  console.log('検索キー: ' + o.textContent);
-  let url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/G0' + o.getAttribute('value') + '.json';
+    console.log('検索キー: ' + selectedOption.textContent);
 
-  axios.get(url)
-  .then(response => {
-    const data = response.data;
-    console.log(data);
-  })
-  .catch(error => {
-    console.error("データ取得エラー:", error);
-  });
+    // URLの生成（value は G001 の形式なのでそのまま使う）
+    const url = 'https://www.nishita-lab.org/web-contents/jsons/hotpepper/' + genreValue + '.json';
+
+    axios.get(url)
+        .then(response => {
+            const data = response.data;
+            console.log(data);  // コンソールに確認用出力
+            printDom(data);     // ページに表示
+        })
+        .catch(error => {
+            console.error("データ取得エラー:", error);
+        });
 }
+
+// データをHTMLに表示する関数
 function printDom(data) {
-  const old = document.getElementById("result");
-  if (old) {
-    old.remove();
-  }
+    const resultDiv = document.querySelector('div#result');
+    resultDiv.innerHTML = '';  // 古い内容削除
 
-  const resultDiv = document.createElement("div");
-  resultDiv.id = "result";
-  document.body.appendChild(resultDiv);
+    for (const shop of data.results.shop) {
+        const shopDiv = document.createElement("div");
 
-  for (const shop of data.results.shop) {
-    const shopDiv = document.createElement("div");
+        const name = document.createElement("h2");
+        name.textContent = shop.name;
 
-    const name = document.createElement("h2");
-    name.textContent = shop.name;
+        const address = document.createElement("p");
+        address.textContent = "住所: " + shop.address;
 
-    const address = document.createElement("p");
-    address.textContent = "住所: " + shop.address;
+        const genre = document.createElement("p");
+        genre.textContent = "ジャンル: " + shop.genre.name;
 
-    const genre = document.createElement("p");
-    genre.textContent = "ジャンル: " + shop.genre.name;
+        const open = document.createElement("p");
+        open.textContent = "営業時間: " + shop.open;
 
-    const open = document.createElement("p");
-    open.textContent = "営業時間: " + shop.open;
+        shopDiv.appendChild(name);
+        shopDiv.appendChild(address);
+        shopDiv.appendChild(genre);
+        shopDiv.appendChild(open);
+        shopDiv.appendChild(document.createElement("hr"));
 
-    shopDiv.appendChild(name);
-    shopDiv.appendChild(address);
-    shopDiv.appendChild(genre);
-    shopDiv.appendChild(open);
-    shopDiv.appendChild(document.createElement("hr"));
-
-    resultDiv.appendChild(shopDiv);
-  }
+        resultDiv.appendChild(shopDiv);
+    }
 }
+
 // 課題3-2 のプログラムはこの関数の中に記述すること
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
