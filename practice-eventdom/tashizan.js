@@ -1,8 +1,8 @@
 function Add() {
   let a = document.querySelector('input[name="left"]');
   let b = document.querySelector('input[name="right"]');
-  let left = i.value;
-  let right = j.value;
+  let left = a.value;
+  let right = b.value;
   
   let c = Number(left);
   let d = Number(right);
